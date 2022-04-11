@@ -1,3 +1,4 @@
+from calendar import leapdays
 import random
 import string
 
@@ -15,13 +16,17 @@ def intro():
     while(answer.upper()=='Y'):
         try:
          playersChoice=input("So, what's your guess? ")
-         #if ord(playersChoice) < 97 or ord(playersChoice) > 122):
-         if playersChoice < 'a' or playersChoice > 'z':
+         if playersChoice < 'a' or playersChoice > 'z' or len(playersChoice) > 1:
             raise ValueError("OUT OF RANGE, AGAIN!")
          if playersChoice == randomAsciiChar:
-                print("wow. Success. In just {} movements".format(cnt)),
+                print("wow. Success. In just {} movements. You will fail next game.".format(cnt)),
                 lederboards.append(cnt)
-                break
+                cnt = 1                
+                answer=input("Current hi-score is {}. You want to try better? [Y/N]".format(min(lederboards)))
+                if answer.upper() == 'N':
+                    break
+                else:
+                    continue
          elif playersChoice > randomAsciiChar:
                 print("hehe, NO! Try earlier")  
                 cnt += 1 
