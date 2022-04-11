@@ -14,4 +14,12 @@ def beginGame():
     else:
         print("Not match.")
 #beginGame()
-compareStrings()
+def intro():
+    print("Hello, I'm P0L1CJ4. I will guide you fru alfabet game.")
+    answer=input("are you in? [Y/N]")
+    while(answer.upper=='Y'):
+        print("I've randomply selected a character from a to z. You need to guess it.")
+        print("I will give you some hints if necessary.")
+        playersChoice=input("So, what's your first guess?")
+    else:
+        print("What a pity.")
