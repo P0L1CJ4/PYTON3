@@ -31,7 +31,7 @@ def intro():
                 print("hehe, NO! Try earlier")  
                 cnt += 1 
          elif playersChoice < randomAsciiChar:
-                print("hehe, NO! Try lasser")  
+                print("hehe, NO! Try subsequent. ")  
                 cnt += 1 
         except ValueError as errormessage:
             print("I told you the rules, your guess is not compatible. AGAIN!")
